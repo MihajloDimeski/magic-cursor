@@ -3,7 +3,12 @@ pipeline {
     tools {
         nodejs "Node"
     }
-    stages{
+    stages {
+        stage('Install Dependencies') {
+            steps {
+                sh 'npm install'
+            }
+        }
         stage('Start app') {
             steps {
                 sh 'npm start'
